@@ -95,7 +95,13 @@ namespace IT_Solutions.Windows
 
         private void BtnEditRequest_Click(object sender, RoutedEventArgs e)
         {
+            // Получаем выбранный элемент из DataGrid
+            var selectedRequest = (Requests)dataGrid.SelectedItem;
 
+            // Открываем окно редактирования и передаем выбранный элемент
+                Edit editWindow = new Edit(selectedRequest);
+                editWindow.ShowDialog();
+            
         }
     }
 }

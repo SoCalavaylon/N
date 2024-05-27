@@ -68,7 +68,7 @@ namespace IT_Solutions.Windows
                 string selectedRequestStatus = ComboBoxRequestStatus.SelectedItem.ToString();
 
                 // Поиск существующего или создание нового клиента
-                Clients client = _entities.Clients.FirstOrDefault(c => c.Last_Name == lastName && c.First_Name == firstName && c.Middle_Name == middleName);
+                Clients client = _entities.Clients.FirstOrDefault(c => c.Last_Name == lastName && c.First_Name == firstName && c.Middle_Name == middleName && c.Phone_Number == phoneNumber);
                 if (client == null)
                 {
                     client = new Clients
@@ -125,5 +125,6 @@ namespace IT_Solutions.Windows
                 MessageBox.Show($"Ошибка при сохранении заявки: {ex.Message}");
             }
         }
+
     }
 }
